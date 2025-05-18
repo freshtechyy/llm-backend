@@ -30,6 +30,6 @@ def ask_question(q: Question):
             messages=[{"role": "user", "content": q.query}]
         )
         answer = response.choices[0].message.content.strip()
-        return {"AI answer": answer}
+        return {"answer": f"You asked: {q.query}. My answer: {answer}"}
     except Exception as e:
-        return {"AI answer": f"Error: {str(e)}"}
+        return {"answer": f"Error: {str(e)}"}
